@@ -61,3 +61,5 @@ ll.display()
 
 ll.insert_at_position(1000,3)
 ll.display()
+print(a)
+print(ll)

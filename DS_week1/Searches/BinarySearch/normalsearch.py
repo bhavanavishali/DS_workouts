@@ -1,4 +1,4 @@
-def binaryserch(arr,target,left=1,right=None):
+def binaryserch(arr,target,left=0,right=None):
     if right is  None:
         right=len(arr)-1
     if left >right:
@@ -9,7 +9,7 @@ def binaryserch(arr,target,left=1,right=None):
         if arr[mid]==target:
             return mid
             
-        if target >  mid:
+        elif target >  arr[mid]:
             left=mid+1
         else:
      

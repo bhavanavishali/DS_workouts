@@ -18,7 +18,7 @@ class Mystack:
     
     
 s=Mystack()
-s.push(100)
+s.push(100) 
 s.push(20)
 s.push(111110)
 

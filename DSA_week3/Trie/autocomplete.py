@@ -2,6 +2,7 @@ class TrieNode:
     def __init__(self):
         self.children={}
         self.end_of_word=False
+        
 class Trie:
     def __init__(self):
         self.root=TrieNode()
@@ -13,13 +14,7 @@ class Trie:
                 node.children[char]=TrieNode()
             node=node.children[char]
         node.end_of_word=True
-    # def display(self):
-    #     node=self.root
-    #     st=""
-    #     for char in node.children:
-    #         if not node.end_of_word:
-    #             st=st+char
-    #     print(st)
+
     def _search_prefix(self,prefix):
         node=self.root
         if node is not None:
@@ -36,6 +31,9 @@ class Trie:
 
         for char, child_node in node.children.items():
             self._collect_words(child_node,prefix+char,word)
+    def search(self,word):
+        node=self._search_prefix(word)
+        return node is not None and node.end_of_word
 
     def autocomplete(self,prefix):
         words=[]
@@ -48,4 +46,5 @@ words=["apple","app","apt","bat","ball"]
 for word in words:
     trie.insert(word)
 
-print(trie.autocomplete("app"))
+print(trie.autocomplete("app")) 
+print("serach",trie.search("applllll"))

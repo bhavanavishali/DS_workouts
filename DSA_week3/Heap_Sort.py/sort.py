@@ -17,7 +17,6 @@ def heapify(arr, n, i):
         arr[i], arr[largest] = arr[largest], arr[i]
         # Recursively heapify the affected subtree
         heapify(arr, n, largest)
-
 def heap_sort(arr):
     n = len(arr)
 

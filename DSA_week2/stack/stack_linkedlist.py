@@ -60,7 +60,7 @@ class MyStackLinkedList:
             return
         current=self.top
         while current:
-            print({current.data})
+            print(f"|{current.data}|")
             current=current.next
         return
 

@@ -18,7 +18,7 @@ class BST:
         else:
             root.right = self.insert(root.right, key)
         return root
-                                                            # Depth First Search  (DFS)
+                                                          # Depth First Search  (DFS)
     def inorder(self, root):
         if root:
             self.inorder(root.left)
@@ -64,7 +64,7 @@ bst = BST()
 root = None
 
 # Insert values into BST and update the root
-values = [20, 10, 30, 5, 15, 25, 35]
+values = [5,10,25,12,15]
 for val in values:
     root = bst.insert(root, val)
 bst.insert(root,30)

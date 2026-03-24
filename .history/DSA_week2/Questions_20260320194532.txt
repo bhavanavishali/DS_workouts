@@ -1,0 +1,26 @@
+1. Stack & Queue
+
+    ->•	Implement stack (without using list)
+	-> Implement stack using queue 
+	-> Implement queue using stack 
+	-> Reverse a stack 
+	-> Valid Parentheses (LeetCode Problem) 
+    -> Implement a min-stack 
+	-> Implement Circular Queue 
+	-> Reverse a queue 
+    -> attempting to push duplicate into stack should move the node with the value to the top (not moved, but removed and duplicate pushed to top)
+
+2. Sorting implementation 
+    •	Implement Bubble Sort
+    •	Implement Insertion Sort 
+    •	Implement Merge Sort 
+    •	Implement Quick Sort 
+    •	Combine 2 sorted arrays into a single sorted array in O(n) 
+    •	Sort a string using merge sort 
+
+3. Hashing / Hash Table Problems
+    •	Implement Hash Table with collision handling 
+    •	Two Sum (using hash table for O(n)) 
+    •	Find first non-repeating character (using hash table) 
+    •	Remove duplicates from a string (using hash table) 
+    •	Find frequency of characters in a string (using hash table) 

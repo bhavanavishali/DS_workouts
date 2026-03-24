@@ -73,3 +73,5 @@ heap.display()          # Output: Heap array: [20, 15, 8, 4, 1, 10]
 print(heap.peek())      # Output: 20 (max element)
 print(heap.delete_max())# Output: 20
 heap.display()          # Output: Updated heap after deleting max
+
+

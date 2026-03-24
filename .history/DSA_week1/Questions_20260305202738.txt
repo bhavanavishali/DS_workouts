@@ -1,0 +1,18 @@
+1.•	Two Pointer approach 
+
+The Two Pointer approach is a technique used in algorithms 
+where two pointers (indexes) are used to traverse a data structure (usually an array or string).
+    ->Two Sum (sorted array)
+    ->Find Middle of Linked List
+    ->Palindrome check
+    ->Reverse string
+
+
+2.•	LinkedList
+    ->Implement Singly Linked List 
+	->Implement Doubly Linked List 
+    ->•	Reverse a Singly Linked List 
+    ->•	Insert/Delete node (at beginning, end, middle, by value) 
+    ->•	Merge Two Sorted Linked Lists 
+    ->•	Remove duplicates from a linked list 
+    ->

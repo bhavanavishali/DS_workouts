@@ -1,0 +1,10 @@
+1. Stack & Queue
+
+    ->•	Implement stack (without using list) (2)
+•	-Implement stack using queue (4)
+•	Implement queue using stack (3)
+•	Reverse a stack (7)
+•	Valid Parentheses (LeetCode Problem) (12)
+•	Implement a min-stack (3)
+•	Implement Circular Queue (7)
+•	Reverse a queue (4)

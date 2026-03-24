@@ -1,0 +1,19 @@
+1. Stack & Queue
+
+    ->•	Implement stack (without using list)
+	-> Implement stack using queue 
+	-> Implement queue using stack 
+	-> Reverse a stack 
+	-> Valid Parentheses (LeetCode Problem) 
+    -> Implement a min-stack 
+	-> Implement Circular Queue 
+	-> Reverse a queue 
+
+2. Sorting implementation 
+    •	Implement Bubble Sort (1)
+    •	Implement Insertion Sort (2)
+    •	Implement Merge Sort (5)
+    •	Implement Quick Sort (5)
+    •	Combine 2 sorted arrays into a single sorted array in O(n) (4)
+    •	Sort a string using merge sort (6)
+

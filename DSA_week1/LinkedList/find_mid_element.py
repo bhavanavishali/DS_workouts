@@ -27,8 +27,7 @@ class Linkedlist:
             return
         slow=self.head
         fast=self.head
-        print(fast.data)
-
+       
         while fast and fast.next:
             slow=slow.next
             fast=fast.next.next
@@ -37,7 +36,7 @@ class Linkedlist:
             new_node.next=slow.next
             slow.data=new_node.data
             
-            
+    
         return None
             
     
@@ -53,3 +52,27 @@ ll.display()
 print("***************")
 ll.middle_element(100)
 ll.display()
+
+
+
+    # def delete_even_number(self):
+    #     while self.head and self.head.data%2==0:
+    #         self.head=self.head.next
+        
+    #     current=self.head
+    #     while current.next:
+    #         if current.next.data%2==0:
+    #             current.next=current.next.next
+    #         else:
+    #             current=current.next
+        
+    #     return
+
+        # def swap_first_last(self):
+        # current =self.head
+        # first=self.head.data
+        # if self.head is not None:
+        #     while current.next:
+        #         current=current.next
+        #     self.head.data=current.data
+        #     current.data=first

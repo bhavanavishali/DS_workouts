@@ -1,50 +1,52 @@
 class TrieNode:
     def __init__(self):
-        self.children={}
-        self.end_of_word=False
-        
+        self.children = {}
+        self.end_of_word = False
+
 class Trie:
     def __init__(self):
-        self.root=TrieNode()
-    
-    def insert(self,word):
-        node=self.root 
+        self.root = TrieNode()
+        
+    def insert(self, word):
+        node = self.root
         for char in word:
             if char not in node.children:
-                node.children[char]=TrieNode()
-            node=node.children[char]
-        node.end_of_word=True
+                node.children[char] = TrieNode()
+            node = node.children[char]
+        node.end_of_word = True
+        
+    def search_prefix(self, prefix):
+        node = self.root
+        for char in prefix:
+            if char not in node.children:
+                return None
+            node = node.children[char]
+        return node
 
-    def _search_prefix(self,prefix):
-        node=self.root
-        if node is not None:
-            for char in prefix:
-                if char not in node.children:
-                    return None
-
-                node=node.children[char]
-            return node
-    
-    def _collect_words(self,node,prefix,word):
+    def collect_words(self, node, prefix, words):
         if node.end_of_word:
-            word.append(prefix)
-
+            words.append(prefix)
         for char, child_node in node.children.items():
-            self._collect_words(child_node,prefix+char,word)
-    def search(self,word):
-        node=self._search_prefix(word)
+            self.collect_words(child_node, prefix + char, words)
+            
+    def search(self, word):
+        node = self.search_prefix(word)
         return node is not None and node.end_of_word
-
-    def autocomplete(self,prefix):
-        words=[]
-        prefix_node=self._search_prefix(prefix)
+    
+    def autocomplete(self, prefix):
+        words = []
+        prefix_node = self.search_prefix(prefix)
         if prefix_node:
-            self._collect_words(prefix_node,prefix,words)
+            self.collect_words(prefix_node, prefix, words)
         return words
-trie=Trie()
-words=["apple","app","apt","bat","ball"]
-for word in words:
-    trie.insert(word)
+        
+        
+# Test
+t = Trie()
+a = ["apple", "orange", "app"]
+for i in a:
+    t.insert(i)
 
-print(trie.autocomplete("app")) 
-print("serach",trie.search("applllll"))
+print(t.autocomplete("app"))  # ['app', 'apple']
+print(t.search("app"))        # True
+print(t.search("appl"))       # False

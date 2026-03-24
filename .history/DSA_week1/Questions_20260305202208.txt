@@ -1,0 +1,5 @@
+1.•	Two Pointer approach 
+    Two Sum (sorted array)
+    Find Middle of Linked List
+    
+

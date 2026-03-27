@@ -1,98 +1,90 @@
 class Node:
-    def __init__(self,key,val):
+    def __init__(self,key,data):
+        self.data=data
         self.key=key
-        self.val=val
         self.next=None
-    
 
 class LinkedList:
     def __init__(self):
         self.head=None
-        
+    
     def insert(self,key,val):
         temp=self.head
-
         while temp:
             if temp.key==key:
-                temp.val=val
+                temp.data=val
                 return
             temp=temp.next
-
+        
         new_node=Node(key,val)
         new_node.next=self.head
         self.head=new_node
-        
+    
+    def search(self,key):
+        temp=self.head
+        while temp:
+            if temp.key==key:
+                return temp.data
+            temp=temp.next
+        return None
+    
     def delete(self,key):
         temp=self.head
         prev=None
-
         while temp:
             if temp.key==key:
                 if prev:
                     prev.next=temp.next
                 else:
                     self.head=temp.next
-                return
-
             prev=temp
             temp=temp.next
-            
-    def search(self,key):
-        temp=self.head
-
-        while temp:
-            if temp.key==key:
-                return temp.val
-                
-            temp=temp.next
-            
-        return None
-        
-    def display(self):
-        temp=self.head
-
-        while temp:
-            print(f"{temp.key}-{temp.val}",end=" -> ")
-            temp=temp.next
-            
-        print()
+        return False
     
+    def display(self):
+        temp = self.head
+        while temp:
+            print(f"({temp.key}:{temp.data})", end=" -> ")
+            temp = temp.next
+        print("None")
+
 
 class HashTable:
     def __init__(self,size):
         self.size=size
         self.items=[LinkedList() for _ in range(self.size)]
-        
-    def myhash(self,key):
+    
+    def my_hash(self,key):
         return hash(key)%self.size
-        
+    
     def put(self,key,val):
-        index=self.myhash(key)
-        self.items[index].insert(key,val)
-        
-    def delete(self,key):
-        index=self.myhash(key)
-        self.items[index].delete(key)
-        
+        index=self.my_hash(key)
+        return self.items[index].insert(key,val)
+    
     def get(self,key):
-        index=self.myhash(key)
+        index=self.my_hash(key)
         return self.items[index].search(key)
-        
+    def delete(self,key):
+        index=self.my_hash(key)
+        return self.items[index].delete(key)
     def display(self):
         for i in range(self.size):
-            print(f"{i}:",end=" ")
+            print(f"{i} :", end=" ")
             self.items[i].display()
 
 
-d={
-    "apple":5,
-    "banana":4,
-    "kiwi":3
-}
+ht = HashTable(10)
 
-h=HashTable(5)
+ht.put("apple", 10)
+ht.put("banana", 20)
+ht.put("grape", 30)
+ht.put("apple", 40)  # Might cause a collision with "apple"
+ht.display()
+print(ht.get("banana"))  # Output: 20
+print(ht.get("apple"))   # Output: 10
 
-for key,val in d.items():
-    h.put(key,val)
+ht.delete("apple")
+print(ht.get("banana"))  # Output: None
 
-h.display()
+print("")
+

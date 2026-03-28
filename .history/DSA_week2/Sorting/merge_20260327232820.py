@@ -1,11 +1,11 @@
-def merge_sort(arr):
+def merge_sort(arr):    #Always O(n log n)
     if len(arr)<=1:
         return arr
     mid=len(arr)//2
     left=merge_sort(arr[:mid])
     right=merge_sort(arr[mid:])
     return merge(left,right)
-
++
 def merge(left,right):
     sorted_array=[]
     i=j=0
@@ -24,5 +24,5 @@ def merge(left,right):
 # right=[3,12,19]
 # print(merge(left,right))
 
-ar=[12,3,34,56,7,98]
+ar=["a","z","c","d",]
 print(merge_sort(ar))

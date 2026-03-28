@@ -5,7 +5,6 @@ def merge_sort(arr):    #Always O(n log n)
     left=merge_sort(arr[:mid])
     right=merge_sort(arr[mid:])
     return merge(left,right)
-
 def merge(left,right):
     sorted_array=[]
     i=j=0

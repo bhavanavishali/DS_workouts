@@ -67,4 +67,4 @@ for i in a:
 lb.display()
 print("***delete")
 lb.delete(10)
-lb.display()
+l.display()

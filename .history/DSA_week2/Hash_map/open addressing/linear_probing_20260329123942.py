@@ -24,24 +24,18 @@ class LinearProbing:
             self.rehashing()
 
     
-    def delete(self,key):
 
-        index=self.myhash(key)
+    def rehashing(self):
 
-        i=0
-        while i < self.size:
+        old_items=self.items
 
-            new_index=(index+i)%self.size
+        self.size=self.size*2
+        self.items=[None]*self.size
+        self.count=0
 
-            if self.items[new_index] is None:
-                return
-
-            if self.items[new_index]==key:
-                self.items[new_index]="DELETED"
-                self.count-=1
-                return
-
-            i+=1
+        for item in old_items:
+            if item is not None and item!="DELETED":
+                self.insert(item)
 
 
     def rehashing(self):
@@ -64,7 +58,4 @@ lb=LinearProbing(4)
 a=[10,5,61,40]
 for i in a:
     lb.insert(i)
-lb.display()
-print("***delete")
-lb.delete(10)
-lb.display()
+lb.display()   

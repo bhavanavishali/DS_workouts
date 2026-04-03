@@ -66,5 +66,5 @@ for i in a:
     lb.insert(i)
 lb.display()
 print("***delete")
-lb.delete(10)
-lb.display()
+l.delete(10)
+l.display()

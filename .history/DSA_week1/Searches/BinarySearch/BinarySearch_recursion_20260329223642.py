@@ -1,7 +1,5 @@
 def binarysearch(arr,target,right=None,left=0):
 
-    if right is None:
-        right= len(arr)-1
 
     if left >right:
         return -1

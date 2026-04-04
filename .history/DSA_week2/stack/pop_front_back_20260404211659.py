@@ -1,0 +1,1 @@
+# To support pop from both ends in O(1), the best structure is a Doubly Linked List.
